@@ -1,17 +1,28 @@
 <script setup>
+import { watchEffect } from 'vue';
 import Header from './components/Header.vue';
 import { Repl, ReplStore } from '@vue/repl';
+
+const setVH = () => {
+  document.documentElement.style.setProperty('--vh', window.innerHeight + `px`);
+};
+window.addEventListener('resize', setVH);
+setVH();
 
 const store = new ReplStore({
   serializedState: location.hash.slice(1),
   defaultVueRuntimeURL: import.meta.env.PROD ? undefined : `${location.origin}/src/vue-dev-proxy`
 });
 
+// enable experimental features
 const sfcOptions = {
   script: {
     reactivityTransform: true
   }
 };
+
+// persist state
+watchEffect(() => history.replaceState({}, '', store.serialize()));
 </script>
 
 <template>
