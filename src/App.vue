@@ -1,6 +1,6 @@
 <script setup>
 import { watchEffect } from 'vue';
-import Header from './components/Header.vue';
+import Header from './Header.vue';
 import { Repl, ReplStore } from '@vue/repl';
 
 const setVH = () => {
@@ -44,6 +44,8 @@ watchEffect(() => history.replaceState({}, '', store.serialize()));
 }
 body {
   font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
   --base: #444;
   --nav-height: 50px;
