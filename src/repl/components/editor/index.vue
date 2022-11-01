@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import FileSelector from './file-selector.vue';
-import CodeMirror from './codemirror/index.vue';
+import CodeMirror from '../codemirror/index.vue';
 import Message from '../message.vue';
 import { debounce } from '../../utils';
 import { computed, inject } from 'vue';

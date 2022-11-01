@@ -4,22 +4,25 @@
 
 <script setup lang="ts">
 import { ref, onMounted, watchEffect, inject } from 'vue';
-import { debounce } from '../../../utils';
+import { debounce } from '../../utils';
 import CodeMirror from './codemirror';
 
-export interface Props {
-  mode?: string;
-  value?: string;
-  readonly?: boolean;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  mode: 'htmlmixed',
-  value: '',
-  readonly: false
+const props = defineProps({
+  mode: {
+    type: String,
+    default: 'htmlmixed'
+  },
+  value: {
+    type: String,
+    default: ''
+  },
+  readonly: {
+    type: Boolean,
+    default: false
+  }
 });
 
-const emit = defineEmits<(e: 'change', value: string) => void>();
+const emit = defineEmits(['change']);
 
 const el = ref();
 const needAutoResize = inject('autoresize');

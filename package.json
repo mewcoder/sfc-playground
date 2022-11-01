@@ -13,7 +13,9 @@
     "codemirror": "^5.65.9",
     "fflate": "^0.7.4",
     "file-saver": "^2.0.5",
+    "hash-sum": "^2.0.0",
     "jszip": "^3.10.1",
+    "sucrase": "^3.28.0",
     "vue": "^3.2.41"
   },
   "devDependencies": {
