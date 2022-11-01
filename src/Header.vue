@@ -1,10 +1,10 @@
 <script setup>
-import { downloadProject } from '../download';
-import Sun from '../icons/Sun.vue';
-import Moon from '../icons/Moon.vue';
-import Share from '../icons/Share.vue';
-import Download from '../icons/Download.vue';
-import GitHub from '../icons/GitHub.vue';
+import { downloadProject } from './download';
+import Sun from './icons/Sun.vue';
+import Moon from './icons/Moon.vue';
+import Share from './icons/Share.vue';
+import Download from './icons/Download.vue';
+import GitHub from './icons/GitHub.vue';
 
 defineProps(['store']);
 
